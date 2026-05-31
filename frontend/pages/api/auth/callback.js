@@ -41,5 +41,5 @@ export default async function handler(req, res) {
   });
 
   apply();
-  res.redirect(302, "/dashboard");
+  res.redirect(302, "/app");
 }

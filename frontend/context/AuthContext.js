@@ -12,6 +12,7 @@ import { insforge } from "../lib/insforge/client";
 
 const AuthContext = createContext({
   user: null,
+  token: null,
   loading: true,
   signIn: async () => {},
   signUp: async () => {},
@@ -39,6 +40,7 @@ async function postJson(url, body) {
 export function AuthProvider({ children }) {
   const router = useRouter();
   const [user, setUser] = useState(null);
+  const [token, setToken] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -107,6 +109,7 @@ export function AuthProvider({ children }) {
   const value = useMemo(
     () => ({
       user,
+      token,
       loading,
       signIn,
       signUp,
@@ -114,7 +117,7 @@ export function AuthProvider({ children }) {
       signOut,
       resendVerification,
     }),
-    [user, loading, signIn, signUp, verifyEmail, signOut, resendVerification]
+    [user, token, loading, signIn, signUp, verifyEmail, signOut, resendVerification]
   );
 
   return createElement(AuthContext.Provider, { value }, children);

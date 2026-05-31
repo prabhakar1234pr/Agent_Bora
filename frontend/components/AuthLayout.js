@@ -47,7 +47,7 @@ export default function AuthLayout({ title, children }) {
   return (
     <>
       <Head>
-        <title>{title} · Agent Bora</title>
+        <title>{`${title} · Agent Bora`}</title>
       </Head>
       <div className="auth-shell">
         <AuthAside />
