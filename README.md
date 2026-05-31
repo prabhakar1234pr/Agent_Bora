@@ -11,10 +11,8 @@ This repo now has a basic working setup:
 
 ```powershell
 cd backend
-python -m venv .venv
-.venv\Scripts\Activate.ps1
-pip install -r requirements.txt
-uvicorn main:app --reload --port 8000
+uv sync
+uv run uvicorn main:app --reload --port 8000
 ```
 
 ### 2) Frontend
