@@ -7,6 +7,9 @@ dependencies = [
   "fastapi",
   "pydantic",
   "uvicorn[standard]",
+  "python-dotenv",
+  "httpx",
+  "insforge",
 ]
 
 [build-system]

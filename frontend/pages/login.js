@@ -20,7 +20,7 @@ export default function LoginPage() {
 
   useEffect(() => {
     if (!loading && user) {
-      void router.replace("/dashboard");
+      void router.replace("/app");
     }
   }, [loading, user, router]);
 
@@ -41,7 +41,7 @@ export default function LoginPage() {
 
     try {
       await signIn({ email, password });
-      await router.push("/dashboard");
+      await router.push("/app");
     } catch (err) {
       setError(err.message || "Sign in failed");
     } finally {

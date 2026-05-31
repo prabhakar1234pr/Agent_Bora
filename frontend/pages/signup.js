@@ -23,7 +23,7 @@ export default function SignupPage() {
 
   useEffect(() => {
     if (!loading && user) {
-      void router.replace("/dashboard");
+      void router.replace("/app");
     }
   }, [loading, user, router]);
 
@@ -40,7 +40,7 @@ export default function SignupPage() {
         return;
       }
       if (data.user) {
-        await router.push("/dashboard");
+        await router.push("/app");
         return;
       }
       setError("Sign up failed. Please try again.");
@@ -58,7 +58,7 @@ export default function SignupPage() {
 
     try {
       await verifyEmail({ email, otp });
-      await router.push("/dashboard");
+      await router.push("/app");
     } catch (err) {
       setError(err.message || "Verification failed");
     } finally {
